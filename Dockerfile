@@ -2,12 +2,12 @@ FROM python:3.9.12 AS BASE
 
 RUN apt-get update \
     && apt-get --assume-yes --no-install-recommends install \
-        build-essential \
-        curl \
-        git \
-        jq \
-        libgomp1 \
-        vim
+    build-essential \
+    curl \
+    git \
+    jq \
+    libgomp1 \
+    vim
 
 WORKDIR /app
 
