@@ -1,0 +1,180 @@
+version: "3.1"
+nlu:
+- intent: initial_greet
+  examples: |
+- intent: hospital_bed_avilability
+  examples: |
+    - hospital beds
+    - beds availability
+    - beds
+    - hospital bed availability
+- intent: Delete_Employee_data
+  examples: |
+    - Delete employee data
+    - remove employee
+    - delete details
+    - delete employee info
+    - delete my info
+    - delete my details
+    - Delete employee data of [727391](employee_id)
+    - remove employee of [748391](employee_id)
+    - delete details of [527191](employee_id)
+    - delete employee info of [720391](employee_id)
+    - delete my info of [727301](employee_id)
+    - delete my details of [725091](employee_id)
+# - intent: Update_employee_data
+#   examples: |
+#     - update my details
+#     - update employee details
+#     - update my name
+#     - update employee name
+#     - edit my details
+#     - edit employee details
+#     - edit my name
+#     - edit employee name
+- intent: Register_employee
+  examples: |
+    - I want to register my name
+    - register me
+    - register my name
+    - i want to sign up
+    - save my details
+    - i want to save my details
+    - sign me up
+    - register employee
+    - register
+- intent: Get_employee_data_by_id
+  examples: |
+    - employee info
+    - employee details
+    - info
+    - details
+    - display info
+    - display details
+    - get me details of [110147](employee_id)
+    - details of [113447](employee_id)
+    - info of [113447](employee_id)
+    - info of [776423](employee_id)
+- intent: stop
+  examples: |
+    - stop
+    - exit
+    - abort
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - nothing
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - yaa
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - naa
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - im happy
+    - im good
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: ask_how are you
+  examples: |
+    - how are you?
+    - im fine. How are you?
+    - how you doing?
+    - what's up?
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: inform
+  examples: |
+    - [BHR](designation)
+    - [HR](designation)
+    - [bhr](designation)
+    - [hr](designation)
+    - [ASE](designation)
+    - [ase](designation)
+    - [CEO](designation)
+    - [ceo](designation)
+    - [COO](designation)
+    - [coo](designation)
+    - [Java Developer](designation)
+    - [RPA Developer](designation)
+    - [Tech Lead](designation)
+    - [Software Engineer](designation)
+    - [878756](employee_id)
+    - [688648](employee_id)
+    - [asbsad lkjhixa](employee_name)
+    - [uusxbxx lowyre](employee_name)
+    - [btxwxwdw](employee_name)
+    - [Surya Deep Chauhan](employee_name)
+    - [Vijay subba](employee_name)
+    - [Charlie Brown]
+    - [Bush Jeorge](employee_name)
+    - [Binay KUmar](employee_name)
+    - [009332](employee_id)

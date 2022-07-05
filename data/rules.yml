@@ -1,0 +1,89 @@
+version: "3.1"
+
+rules:
+# - rule: fallback
+#   steps:
+#   - intent: nlu_fallback
+#   - action: utter_default
+
+
+- rule: Start conversation with welcome
+  conversation_start: true
+  steps:
+  - intent: initial_greet
+  - action: utter_greet_welcome
+
+- rule: Show hospital bed availability
+  steps:
+  - intent: hospital_bed_avilability
+  - action: action_resources_list
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Activate register form
+  steps:
+  - intent: Register_employee
+  - action: utter_fill_form_all_details
+  - action: employee_register_form
+  - active_loop: employee_register_form
+
+- rule: Submit register form
+  condition:
+  - active_loop: employee_register_form
+  steps:
+  - action: employee_register_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: validate_employee_register_form
+  - action: submit_employee_register_form
+############
+
+- rule: Activate query form
+  steps:
+  - intent: Get_employee_data_by_id
+  - slot_was_set:
+    - q_employee_id: null
+  - action: employee_query_form
+  - active_loop: employee_query_form
+
+- rule: Submit query form
+  condition:
+  - active_loop: employee_query_form
+  steps:
+  - action: employee_query_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: submit_employee_query_form
+
+############
+
+- rule: Activate employee deletion form
+  steps:
+  - intent: Delete_Employee_data
+  - slot_was_set:
+    - d_employee_id: null
+  - action: employee_delete_form
+  - active_loop: employee_delete_form
+
+- rule: Submit employee deletion form
+  condition:
+  - active_loop: employee_delete_form
+  steps:
+  - action: employee_delete_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: submit_employee_delete_form
+
+# - rule: Update employee data
+

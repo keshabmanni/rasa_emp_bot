@@ -1,0 +1,61 @@
+version: "3.1"
+
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_what_else_CanIDoForYou
+
+- story: Canot register but want to try again
+  steps:
+  - action: utter_cant_register
+  - intent: affirm
+  - action: employee_register_form
+  - active_loop: employee_register_form
+
+- story: Canot register and dont want to try again
+  steps:
+  - action: utter_cant_register
+  - intent: deny
+  - action: utter_what_else_CanIDoForYou
+
+
+- story: Get Employee info with entity provided
+  steps:
+  - intent: Get_employee_data_by_id
+    entities:
+    - employee_id
+  - slot_was_set:
+    - q_employee_id
+  - action: submit_employee_query_form
+
+- story: Delete Employee with entity provided
+  steps:
+  - intent: Delete_Employee_data
+    entities:
+    - employee_id
+  - slot_was_set:
+    - d_employee_id
+  - action: submit_employee_delete_form
